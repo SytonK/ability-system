@@ -7,6 +7,7 @@
 script = ExtResource("1_yprck")
 ability = NodePath("AbilityExample")
 ability_key = "example"
+cooldown = 2.0
 
 [node name="AbilityExample" type="Node" parent="."]
 script = ExtResource("2_67o72")
