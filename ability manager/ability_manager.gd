@@ -26,10 +26,11 @@ func _cast_ability() -> void:
 
 
 func _init_cooldown() -> void:
-	cooldown_timer = Timer.new()
-	cooldown_timer.wait_time = cooldown
-	cooldown_timer.timeout.connect(_on_cooldown_timer_timeout)
-	add_child(cooldown_timer)
+	if cooldown > 0:
+		cooldown_timer = Timer.new()
+		cooldown_timer.wait_time = cooldown
+		cooldown_timer.timeout.connect(_on_cooldown_timer_timeout)
+		add_child(cooldown_timer)
 
 func _on_cooldown_timer_timeout() -> void:
 	is_on_cooldown = false
@@ -38,5 +39,6 @@ func _check_cooldown() -> bool:
 	return !is_on_cooldown
 
 func _on_cast_cooldown() -> void:
-	is_on_cooldown = true
-	cooldown_timer.start()
+	if cooldown > 0:
+		is_on_cooldown = true
+		cooldown_timer.start()
