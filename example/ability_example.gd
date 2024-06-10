@@ -1,5 +1,5 @@
 extends Ability
 
 
-func cast() -> void:
+func _cast() -> void:
 	print('cast')
