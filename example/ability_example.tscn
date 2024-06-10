@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4ee6l2evl1p4"]
+
+[ext_resource type="Script" path="res://example/ability_example.gd" id="1_f7p2r"]
+
+[node name="AbilityExample" type="Node"]
+script = ExtResource("1_f7p2r")
+ability_key = "example"
+cooldown = 1.0
