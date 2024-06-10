@@ -9,7 +9,7 @@ var cooldown_timer: Timer
 var is_on_cooldown: bool = false
 
 
-func cast() -> void:
+func _cast() -> void:
 	pass
 
 
@@ -25,7 +25,7 @@ func _can_cast() -> bool:
 
 func _cast_ability() -> void:
 	_on_cast_cooldown()
-	cast()
+	_cast()
 
 
 func _init_cooldown() -> void:
