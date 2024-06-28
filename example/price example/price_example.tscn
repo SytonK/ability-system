@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cicf0gd53ht42"]
+
+[ext_resource type="Script" path="res://example/price example/price_example.gd" id="1_jju2c"]
+[ext_resource type="Script" path="res://example/price example/price_ability_example.gd" id="2_bwsx2"]
+
+[node name="PriceExample" type="Node"]
+script = ExtResource("1_jju2c")
+
+[node name="PricedAbilityExample" type="Node" parent="."]
+script = ExtResource("2_bwsx2")
+ability_key = "example"
+cooldown = 5.0
+max_charges = 5
+charges = 5
+charg_time = 5.0
