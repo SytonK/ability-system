@@ -9,7 +9,9 @@ script = ExtResource("1_jju2c")
 [node name="PricedAbilityExample" type="Node" parent="."]
 script = ExtResource("2_bwsx2")
 ability_key = "example"
-cooldown = 5.0
+cooldown = 2.0
 max_charges = 5
 charges = 5
 charg_time = 5.0
+
+[connection signal="cant_pay" from="PricedAbilityExample" to="." method="_on_priced_ability_example_cant_pay"]

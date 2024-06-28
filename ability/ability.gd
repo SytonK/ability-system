@@ -2,6 +2,10 @@ class_name Ability
 extends Node
 
 
+signal on_cooldown
+signal no_charges
+
+
 @export var ability_key: String
 
 @export var cooldown: float
@@ -47,7 +51,10 @@ func _on_cooldown_timer_timeout() -> void:
 	is_on_cooldown = false
 
 func _check_cooldown() -> bool:
-	return !is_on_cooldown
+	var result: bool = !is_on_cooldown
+	if !result:
+		on_cooldown.emit()
+	return result
 
 func _on_cast_cooldown() -> void:
 	if cooldown > 0:
@@ -68,7 +75,10 @@ func _set_charges(new_charges: int) -> void:
 	charges = clamp(new_charges, 0, max_charges)
 
 func _check_charges() -> bool:
-	return max_charges == 0 || charges > 0
+	var result: bool = max_charges == 0 || charges > 0
+	if !result:
+		no_charges.emit()
+	return result
 
 func _on_cast_charges() -> void:
 	if max_charges <= 0:
