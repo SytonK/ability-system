@@ -2,6 +2,7 @@ extends Ability
 
 
 func _cast() -> void:
+	super._cast()
 	print('cast')
 
 

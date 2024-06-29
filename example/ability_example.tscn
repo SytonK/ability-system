@@ -8,6 +8,7 @@ ability_key = "example"
 cooldown = 1.0
 max_charges = 3
 charges = 3
+charg_time = 5.0
 
 [connection signal="no_charges" from="." to="." method="_on_no_charges"]
 [connection signal="on_cooldown" from="." to="." method="_on_on_cooldown"]

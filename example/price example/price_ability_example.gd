@@ -6,6 +6,7 @@ extends PricedAbility
 
 
 func _cast() -> void:
+	super._cast()
 	print('cast with price')
 
 func _can_pay_price() -> bool:

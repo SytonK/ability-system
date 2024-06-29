@@ -18,7 +18,7 @@ var is_on_cooldown: bool = false
 var charg_timer: Timer
 
 func _cast() -> void:
-	pass
+	_recharg_cooldown()
 
 
 func _ready() -> void:
@@ -59,6 +59,9 @@ func _check_cooldown() -> bool:
 func _on_cast_cooldown() -> void:
 	if cooldown > 0:
 		is_on_cooldown = true
+
+func _recharg_cooldown() -> void:
+	if cooldown > 0:
 		cooldown_timer.start()
 
 
